@@ -4,7 +4,7 @@ const app = express();
 const port = process.env.PORT || 8000;
 
 app.use(function (req, res, next) {
-    res.setHeader('Access-Control-Allow-Origin', 'http://christophergoodburn.com/');
+    res.setHeader('Access-Control-Allow-Origin', '*');
     next();
 });
 
