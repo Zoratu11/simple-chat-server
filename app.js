@@ -3,8 +3,13 @@ const app = express();
 
 const port = process.env.PORT || 8000;
 
+app.use(function (req, res, next) {
+    res.setHeader('Access-Control-Allow-Origin', 'http://christophergoodburn.com/');
+    next();
+});
+
 server = app.listen(port, () => {
-    console.log("Server is running on port 8000");
+    console.log("Server is running on port " + port);
 });
 
 const socket = require("socket.io");
